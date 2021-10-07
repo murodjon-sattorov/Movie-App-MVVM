@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Films</string>
+    <string name="latest_movies">The latest movies</string>
+    <string name="with_the_trailers">Along with the trailers</string>
+    <string name="boredom_movies">Boredom movies</string>
+    <string name="with_vr_glasses">Viewing with VR glasses</string>
+    <string name="start">Get started</string>
+    <string name="featured_films">Featured Movies</string>
+    <string name="movies">Movies</string>
+    <string name="tv_series">TV Series</string>
+    <string name="action">Action</string>
+    <string name="comedy">Comedy</string>
+    <string name="home">Home</string>
+    <string name="series">Series</string>
+    <string name="livetv">LiveTv</string>
+    <string name="downloads">Downloads</string>
+    <string name="profile">Profile</string>
+</resources>

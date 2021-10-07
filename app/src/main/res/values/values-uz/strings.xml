@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Films</string>
+    <string name="latest_movies">Eng yangi filmlar</string>
+    <string name="with_the_trailers">Treylerlar bilan birga</string>
+    <string name="boredom_movies">Zerikishlarsiz filmlar</string>
+    <string name="with_vr_glasses">VR ko\'zoynaklar bilan ko\'rish</string>
+    <string name="start">Boshlash</string>
+    <string name="featured_films">Tanlangan filmlar</string>
+    <string name="movies">Filmlar</string>
+    <string name="tv_series">TV seriallar</string>
+    <string name="action">Action</string>
+    <string name="comedy">Komediya</string>
+    <string name="home">Bosh sahifa</string>
+    <string name="series">Seriallar</string>
+    <string name="livetv">LiveTv</string>
+    <string name="downloads">Yuklanganlar</string>
+    <string name="profile">Profile</string>
+</resources>
