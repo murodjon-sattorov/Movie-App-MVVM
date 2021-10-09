@@ -1,5 +1,6 @@
 package uz.murodjon_sattorov.myfilms.core.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +11,7 @@ import uz.murodjon_sattorov.myfilms.core.model.Result
 import uz.murodjon_sattorov.myfilms.databinding.ItemMovieHomeBinding
 import uz.murodjon_sattorov.myfilms.shadowview.RenderScriptBlur
 import uz.murodjon_sattorov.myfilms.shadowview.RenderScriptProvider
+import uz.murodjon_sattorov.myfilms.ui.activities.DetailsActivity
 
 /**
  * Created by <a href="mailto: sattorovmurodjon43@gmail.com">Murodjon Sattorov</a>
@@ -39,6 +41,12 @@ class HomeMovieList : RecyclerView.Adapter<HomeMovieList.ViewHolder>() {
             binding.shadowView.blurScript = RenderScriptBlur(renderScriptProvider)
             GlideApp.with(binding.homeMovieImage).load(BASE_IMAGE_HIGH + result.poster_path)
                 .into(binding.homeMovieImage)
+
+            binding.homeMovieImage.setOnClickListener {
+                val intent = Intent(binding.homeMovieImage.context, DetailsActivity::class.java)
+                intent.putExtra("result", result)
+                binding.homeMovieImage.context.startActivity(intent)
+            }
 
         }
     }

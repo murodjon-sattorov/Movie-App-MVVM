@@ -1,5 +1,7 @@
 package uz.murodjon_sattorov.myfilms.core.model
 
+import java.io.Serializable
+
 data class Result(
     val adult: Boolean, // false
     val backdrop_path: String, // /8Y43POKjjKDGI9MH89NW0NAzzp8.jpg
@@ -15,4 +17,4 @@ data class Result(
     val video: Boolean, // false
     val vote_average: Float, // 7.9
     val vote_count: Int // 2162
-)
+): Serializable

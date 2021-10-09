@@ -103,4 +103,6 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:5.0.1'
 
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+
+    implementation 'com.github.EudyContreras:Skeleton-Bones:1.4.4'
 }
