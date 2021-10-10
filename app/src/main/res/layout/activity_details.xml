@@ -16,7 +16,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:background="@color/white" />
+        tools:background="@color/white"
+        android:contentDescription="@string/app_name" />
 
     <View
         android:layout_width="match_parent"
@@ -36,7 +37,8 @@
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="@+id/details_movie_image"
         app:layout_constraintTop_toBottomOf="@+id/details_movie_image"
-        tools:background="@mipmap/ic_launcher" />
+        tools:background="@mipmap/ic_launcher"
+        android:contentDescription="@string/app_name" />
 
     <TextView
         android:id="@+id/movie_title"
@@ -59,12 +61,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_134sdp"
+        android:drawablePadding="@dimen/_2sdp"
         android:textColor="@color/white"
-        tools:text="5.6"
         android:textSize="16sp"
+        app:drawableEndCompat="@drawable/ic_baseline_star_24"
         app:layout_constraintBottom_toBottomOf="@+id/poster_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/movie_title"
-        app:drawableEndCompat="@drawable/ic_baseline_star_24" />
+        tools:text="5.6" />
+
+    <TextView
+        android:id="@+id/movie_rating_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_134sdp"
+        android:drawablePadding="@dimen/_2sdp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:drawableEndCompat="@drawable/ic_baseline_campaign_24"
+        app:layout_constraintBottom_toBottomOf="@+id/poster_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/movie_rating"
+        tools:text="1860" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

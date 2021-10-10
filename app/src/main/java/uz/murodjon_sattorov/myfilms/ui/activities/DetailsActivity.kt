@@ -36,6 +36,7 @@ class DetailsActivity : AppCompatActivity() {
 
         detailsBinding.movieTitle.text = intent.title
         detailsBinding.movieRating.text = intent.vote_average.toString()
+        detailsBinding.movieRatingCount.text = intent.vote_count.toString()
 
 
     }
