@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    app:skeletonAnimateRestoredBounds="true"
+    app:skeletonAllowSavedState="true"
+    app:skeletonBoneColor="#606060"
+    app:skeletonBoneCornerRadius="10"
+    app:skeletonBoneMaxThickness="12dp"
+    app:skeletonBoneMinThickness="10dp"
+    app:skeletonDissectLargeBones="false"
+    app:skeletonEnabled="true"
+    app:skeletonGenerateBones="true"
+    app:skeletonShimmerRayColor="#ff0000"
+    app:skeletonShimmerRayCount="3"
+    app:skeletonShimmerRayInterpolator="@android:interpolator/accelerate_quad"
+    app:skeletonShimmerRaySharedInterpolator="true"
+    app:skeletonShimmerRaySpeedMultiplier="1"
+    app:skeletonShimmerRayThickness="120dp"
+    app:skeletonTransitionDuration="200"
+    app:skeletonUseStateTransition="true"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <uz.murodjon_sattorov.myfilms.shadowview.ShadowView
+        android:id="@+id/shadowView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shadowDx="14dp"
+        app:shadowDy="14dp"
+        app:shadowRadius="5dp">
+
+        <ImageView
+            android:id="@+id/actor_image"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_margin="14dp"
+            android:background="@drawable/rounded_corners"
+            android:outlineProvider="background"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+
+    </uz.murodjon_sattorov.myfilms.shadowview.ShadowView>
+
+    <TextView
+        android:id="@+id/actor_name"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="12dp"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

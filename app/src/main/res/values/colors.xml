@@ -12,4 +12,5 @@
     <color name="icon_disabled">#FF63727B</color>
     <color name="transparent">#00000000</color>
     <color name="accent">#FE0000</color>
+    <color name="colorBackground">#121212</color>
 </resources>

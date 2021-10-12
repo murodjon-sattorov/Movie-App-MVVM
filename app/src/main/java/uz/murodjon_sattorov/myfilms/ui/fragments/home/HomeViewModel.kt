@@ -1,6 +1,7 @@
 package uz.murodjon_sattorov.myfilms.ui.fragments.home
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,7 +11,6 @@ import io.reactivex.rxjava3.observers.DisposableSingleObserver
 import io.reactivex.rxjava3.schedulers.Schedulers
 import uz.murodjon_sattorov.myfilms.core.helper.apiKey
 import uz.murodjon_sattorov.myfilms.core.model.MovieListResponse
-import uz.murodjon_sattorov.myfilms.core.model.latest.LatestMoviesResponse
 import uz.murodjon_sattorov.myfilms.core.network.NetworkingHelper
 
 /**
@@ -124,7 +124,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         _isLoading.postValue(true)
 
         val disposable = networkingHelper.getMovieApi()
-            .getUpcoming(apiKey, 2)
+            .getUpcoming(apiKey, page)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeWith(object : DisposableSingleObserver<MovieListResponse>() {

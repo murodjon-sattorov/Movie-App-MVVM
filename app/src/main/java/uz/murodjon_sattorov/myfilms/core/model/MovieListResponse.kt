@@ -4,6 +4,7 @@ data class MovieListResponse(
     val dates: Dates,
     val page: Int, // 1
     val results: List<Result>,
+    val cast: List<Actor>,
     val total_pages: Int, // 85
     val total_results: Int // 1698
 ){

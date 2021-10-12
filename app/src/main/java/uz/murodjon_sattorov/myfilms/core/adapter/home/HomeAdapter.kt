@@ -1,4 +1,4 @@
-package uz.murodjon_sattorov.myfilms.core.adapter
+package uz.murodjon_sattorov.myfilms.core.adapter.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -34,6 +34,11 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
             binding.homeItemList.layoutManager = layoutManager
             binding.homeItemList.adapter = adapter
             adapter.addData(movieListResponse.results)
+
+
+            binding.groupMore.setOnClickListener {
+
+            }
 
         }
     }

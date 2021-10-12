@@ -2,9 +2,10 @@ package uz.murodjon_sattorov.myfilms.core.network
 
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 import uz.murodjon_sattorov.myfilms.core.model.MovieListResponse
-import uz.murodjon_sattorov.myfilms.core.model.latest.LatestMoviesResponse
+import uz.murodjon_sattorov.myfilms.core.model.details.MovieDetailsResponse
 
 /**
  * Created by <a href="mailto: sattorovmurodjon43@gmail.com">Murodjon Sattorov</a>
@@ -42,5 +43,25 @@ interface MovieApi {
         @Query("page") page: Int
     ): Single<MovieListResponse>
 
+
+    @GET("movie/{movie_id}")
+    fun getDetails(
+        @Path("movie_id") movie_id: Int,
+        @Query("api_key") api_key: String
+    ): Single<MovieDetailsResponse>
+
+
+    @GET("movie/{movie_id}/similar")
+    fun getSimilar(
+        @Path("movie_id") movie_id: Int,
+        @Query("api_key") api_key: String
+    ): Single<MovieListResponse>
+
+
+    @GET("movie/{movie_id}/credits")
+    fun getActors(
+        @Path("movie_id") movie_id: Int,
+        @Query("api_key") api_key: String
+    ): Single<MovieListResponse>
 
 }

@@ -1,8 +1,7 @@
-package uz.murodjon_sattorov.myfilms.core.adapter
+package uz.murodjon_sattorov.myfilms.core.adapter.details
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import uz.murodjon_sattorov.myfilms.R
 import uz.murodjon_sattorov.myfilms.core.model.MovieListResponse
@@ -12,10 +11,10 @@ import uz.murodjon_sattorov.myfilms.databinding.ItemHomeBinding
  * Created by <a href="mailto: sattorovmurodjon43@gmail.com">Murodjon Sattorov</a>
  *
  * @author Murodjon
- * @date 10/7/2021
+ * @date 10/11/2021
  * @project My Films
  */
-class HomePopularAdapter : RecyclerView.Adapter<HomePopularAdapter.ViewHolder>() {
+class SmilarItemAdapter : RecyclerView.Adapter<SmilarItemAdapter.ViewHolder>() {
 
     private val data = ArrayList<MovieListResponse>()
     fun addData(d: MovieListResponse) {
@@ -24,25 +23,16 @@ class HomePopularAdapter : RecyclerView.Adapter<HomePopularAdapter.ViewHolder>()
     }
 
     inner class ViewHolder(var binding: ItemHomeBinding) : RecyclerView.ViewHolder(binding.root) {
-        private val adapter = HomePopularMovieListAdapter()
-        private val layoutManager = LinearLayoutManager(binding.root.context, LinearLayoutManager.HORIZONTAL, false)
-
+        private val adapter = SmilarItemAdapter()
         fun bindData(movieListResponse: MovieListResponse) {
-
             binding.titleItemList.text = movieListResponse.title
-
-            binding.homeItemList.layoutManager = layoutManager
-            binding.homeItemList.adapter = adapter
-            adapter.addData(movieListResponse.results)
-
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             ItemHomeBinding.bind(
-                LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_home, parent, false)
+                LayoutInflater.from(parent.context).inflate(R.layout.item_home, parent, false)
             )
         )
     }
@@ -53,10 +43,5 @@ class HomePopularAdapter : RecyclerView.Adapter<HomePopularAdapter.ViewHolder>()
 
     override fun getItemCount(): Int {
         return data.size
-    }
-
-    fun clearData() {
-        data.clear()
-        notifyDataSetChanged()
     }
 }

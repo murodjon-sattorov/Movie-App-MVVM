@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import uz.murodjon_sattorov.myfilms.core.adapter.HomeAdapter
-import uz.murodjon_sattorov.myfilms.core.adapter.HomePopularAdapter
+import uz.murodjon_sattorov.myfilms.core.adapter.home.HomeAdapter
+import uz.murodjon_sattorov.myfilms.core.adapter.home.HomePopularAdapter
 import uz.murodjon_sattorov.myfilms.databinding.FragmentHomeBinding
 
 /**
