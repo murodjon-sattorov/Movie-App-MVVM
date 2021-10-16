@@ -16,5 +16,7 @@ data class Result(
     val title: String, // Free Guy
     val video: Boolean, // false
     val vote_average: Float, // 7.9
-    val vote_count: Int // 2162
+    val vote_count: Int, // 2162
+    val key: String, // jRn48HxssPI
+    val official: Boolean, // true
 ): Serializable

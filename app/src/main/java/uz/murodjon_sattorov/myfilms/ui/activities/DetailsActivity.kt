@@ -1,5 +1,6 @@
 package uz.murodjon_sattorov.myfilms.ui.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +8,7 @@ import android.view.View.*
 import android.view.ViewGroup
 import android.view.Window
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import uz.murodjon_sattorov.myfilms.R
@@ -28,6 +30,7 @@ class DetailsActivity : AppCompatActivity() {
 
     private var adapter = ActorsItemAdapter()
     private var similarAdapter = HomePopularAdapter()
+    private var youtubeKey = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,12 +49,18 @@ class DetailsActivity : AppCompatActivity() {
         setObservable(intent)
         loadData(intent.id)
 
+        detailsBinding.loadVideo.setOnClickListener {
+            val intent = Intent(this, VideoTrailerActivity::class.java)
+            intent.putExtra("videoId", youtubeKey)
+            startActivity(intent)
+        }
 
     }
 
     private fun setListener() {
         detailsBinding.actorsList.adapter = adapter
-        detailsBinding.actorsList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        detailsBinding.actorsList.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         detailsBinding.similarList.adapter = similarAdapter
         detailsBinding.similarList.layoutManager = LinearLayoutManager(this)
     }
@@ -81,6 +90,12 @@ class DetailsActivity : AppCompatActivity() {
             data?.title = "Similar movies"
             similarAdapter.addData(data!!)
         })
+        viewModel.loadVideoTrailer.observe(this, {
+            val data = it
+            youtubeKey = data!!.results[0].key
+            Log.d("TBT", "setObservable: $data")
+        })
+
 
     }
 
@@ -88,6 +103,7 @@ class DetailsActivity : AppCompatActivity() {
         viewModel.getDetails(movieId)
         viewModel.getActors(movieId)
         viewModel.getSimilar(movieId)
+        viewModel.getVideoTrailer(movieId)
     }
 
     private fun loadOverviewText() {
@@ -97,4 +113,6 @@ class DetailsActivity : AppCompatActivity() {
             detailsBinding.overviewLoad.visibility = GONE
         }
     }
+
+
 }

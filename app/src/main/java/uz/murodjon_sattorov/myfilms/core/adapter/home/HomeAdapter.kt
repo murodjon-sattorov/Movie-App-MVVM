@@ -1,5 +1,7 @@
 package uz.murodjon_sattorov.myfilms.core.adapter.home
 
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -7,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import uz.murodjon_sattorov.myfilms.R
 import uz.murodjon_sattorov.myfilms.core.model.MovieListResponse
 import uz.murodjon_sattorov.myfilms.databinding.ItemHomeBinding
+import uz.murodjon_sattorov.myfilms.ui.activities.MoreActivity
 
 /**
  * Created by <a href="mailto: sattorovmurodjon43@gmail.com">Murodjon Sattorov</a>
@@ -25,7 +28,8 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
     inner class ViewHolder(var binding: ItemHomeBinding) : RecyclerView.ViewHolder(binding.root) {
         private val adapter = HomeMovieList()
-        private val layoutManager = LinearLayoutManager(binding.root.context, LinearLayoutManager.HORIZONTAL, false)
+        private val layoutManager =
+            LinearLayoutManager(binding.root.context, LinearLayoutManager.HORIZONTAL, false)
 
         fun bindData(movieListResponse: MovieListResponse) {
 
@@ -37,7 +41,20 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
 
             binding.groupMore.setOnClickListener {
-
+                val intent = Intent(binding.groupMore.context, MoreActivity::class.java)
+                val categoryId: String = binding.titleItemList.text.toString()
+                when (categoryId) {
+                    "Now Playing" -> {
+                        intent.putExtra("categoryId", binding.titleItemList.text.toString())
+                    }
+                    "Top Rated" -> {
+                        intent.putExtra("categoryId", binding.titleItemList.text.toString())
+                    }
+                    "Upcoming" -> {
+                        intent.putExtra("categoryId", binding.titleItemList.text.toString())
+                    }
+                }
+                binding.groupMore.context.startActivity(intent)
             }
 
         }

@@ -14,9 +14,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFilms"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.activities.MoreActivity"></activity>
-        <activity android:name=".ui.activities.DetailsActivity" />
-        <activity android:name=".ui.activities.MainActivity">
+        <activity
+            android:name=".ui.activities.VideoTrailerActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.activities.MoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.DetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

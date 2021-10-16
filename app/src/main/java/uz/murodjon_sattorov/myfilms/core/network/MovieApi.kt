@@ -6,6 +6,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 import uz.murodjon_sattorov.myfilms.core.model.MovieListResponse
 import uz.murodjon_sattorov.myfilms.core.model.details.MovieDetailsResponse
+import uz.murodjon_sattorov.myfilms.core.model.videos.MovieTrailerResponse
 
 /**
  * Created by <a href="mailto: sattorovmurodjon43@gmail.com">Murodjon Sattorov</a>
@@ -63,5 +64,12 @@ interface MovieApi {
         @Path("movie_id") movie_id: Int,
         @Query("api_key") api_key: String
     ): Single<MovieListResponse>
+
+
+    @GET("movie/{movie_id}/videos")
+    fun getVideoTrailer(
+        @Path("movie_id") movie_id: Int,
+        @Query("api_key") api_key: String
+    ): Single<MovieTrailerResponse>
 
 }

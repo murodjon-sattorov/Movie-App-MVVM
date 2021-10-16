@@ -1,5 +1,6 @@
 package uz.murodjon_sattorov.myfilms.core.adapter.home
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import uz.murodjon_sattorov.myfilms.R
 import uz.murodjon_sattorov.myfilms.core.model.MovieListResponse
 import uz.murodjon_sattorov.myfilms.databinding.ItemHomeBinding
+import uz.murodjon_sattorov.myfilms.ui.activities.MoreActivity
 
 /**
  * Created by <a href="mailto: sattorovmurodjon43@gmail.com">Murodjon Sattorov</a>
@@ -34,6 +36,17 @@ class HomePopularAdapter : RecyclerView.Adapter<HomePopularAdapter.ViewHolder>()
             binding.homeItemList.layoutManager = layoutManager
             binding.homeItemList.adapter = adapter
             adapter.addData(movieListResponse.results)
+
+            binding.groupMore.setOnClickListener {
+                val intent = Intent(binding.groupMore.context, MoreActivity::class.java)
+                val categoryId: String = binding.titleItemList.text.toString()
+                when (categoryId) {
+                    "Popular" -> {
+                        intent.putExtra("categoryId", binding.titleItemList.text.toString())
+                    }
+                }
+                binding.groupMore.context.startActivity(intent)
+            }
 
         }
     }

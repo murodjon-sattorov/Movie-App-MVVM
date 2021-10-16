@@ -6,6 +6,8 @@
     android:background="@color/colorBackground"
     android:layout_height="match_parent">
 
+
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/refresh_layout"
         android:layout_width="match_parent"
