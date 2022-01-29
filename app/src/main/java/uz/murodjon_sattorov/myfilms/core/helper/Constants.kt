@@ -9,7 +9,7 @@ package uz.murodjon_sattorov.myfilms.core.helper
  */
 
 const val baseApiUrl = "https://api.themoviedb.org/3/"
-const val apiKey = "43dd72d8d79dcbce00c80be4a7c4a962"
+const val apiKey = "43dXXXXXXXXXXXXXXXXXXXXXXXXXXX962" //your apiKey
 
 private const val BASE_IMAGE_URL = "https://image.tmdb.org/t/p/"
 private const val IMAGE_SIZE_W500 = "w500"
